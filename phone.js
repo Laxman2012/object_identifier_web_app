@@ -1,5 +1,6 @@
 img ="";
 Status = "";
+objects=[];
 
 function setup()
 {
@@ -39,6 +40,25 @@ function draw()
 {
 
    image(img,0,0,640,420);
+
+   if(Status != "")
+   {
+
+      for (i = 0; i < objects.length; i++)
+      {
+
+         document.getElementById("status").innerHTML = "Status: Object Detected";
+
+         fill("#FF0000");
+         percent = floor(objects[i].confidence * 100);
+         text(objects[i].label + "" + percent + "%" , objects[i].x , objects[i].y);
+         noFill();
+         stroke("#FF0000");
+         rect(objects[i].x , objects[i].y , objects[i].width+290 , objects[i].height+200);
+
+      }
+
+   }
 }
 
 function gotresult(error , results)
@@ -52,5 +72,6 @@ function gotresult(error , results)
  }
  
  console.log(results);
+ objects = results;
 
 }

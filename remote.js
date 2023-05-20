@@ -5,7 +5,7 @@ objects = [];
 function setup()
 {
 
-   canvas = createCanvas(600 , 400);
+   canvas = createCanvas(640 , 420);
    canvas.center();
 
    objectidentifier = ml5.objectDetector('cocossd' , modelLoaded );
@@ -16,11 +16,11 @@ function setup()
 function preload()
 {
 
-    img = loadImage("book.jpg");
+    img = loadImage("remote.jpg");
 
 }
 
-function modelLoaded()
+function modelLoaded()  
 {
 
     console.log("Model Loaded!!!");
@@ -54,12 +54,13 @@ function draw()
          text(objects[i].label + "" + percent + "%" , objects[i].x , objects[i].y);
          noFill();
          stroke("#FF0000");
-         rect(objects[i].x , objects[i].y , objects[i].width , objects[i].height+50);
+         rect(objects[i].x , objects[i].y , objects[i].width , objects[i].height);
 
       }
 
    }
 }
+
 
 function gotresult(error , results)
 {
@@ -73,5 +74,6 @@ function gotresult(error , results)
 
  console.log(results);
  objects = results;
+
 
 }

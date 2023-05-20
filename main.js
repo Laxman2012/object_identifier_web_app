@@ -8,14 +8,14 @@ function Btn1()
 function Btn2()
 {
 
-    window.location.href = "cable.html";
+    window.location.href = "remote.html";
 
 }
 
 function Btn3()
 {
 
-    window.location.href = "pen.html";
+    window.location.href = "donut.html";
 
 }
 
@@ -29,6 +29,6 @@ function Btn4()
 function Btn5()
 {
 
-    window.location.href = "shampoo.html";
+    window.location.href = "bottle.html";
 
 }
